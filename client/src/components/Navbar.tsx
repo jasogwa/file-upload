@@ -8,7 +8,7 @@ const Navbar = () => {
             <Container>
                 <Toolbar>
                     <Typography variant="h6" flexGrow={1}>
-                        Doc Upload
+                        Doc Management
                     </Typography>
                     <Button variant="text" color="inherit" startIcon={<LoginIcon />}>
                         Login

@@ -12,6 +12,8 @@ import {
     Button
 } from '@mui/material';
 import axios from 'axios';
+import toastr from 'toastr';
+import 'toastr/build/toastr.min.css';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import DownloadIcon from '@mui/icons-material/Download';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -38,7 +40,7 @@ const UploadSection = () => {
 
             try {
                 await axios.post(`${baseURL}/upload`, formData);
-                console.log('Upload successful');
+                toastr.success('Upload successful');
             } catch (error) {
                 console.error('Upload error:', error);
             }
@@ -64,13 +66,16 @@ const UploadSection = () => {
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', filename); // Replace with your file name
+            link.setAttribute('download', filename);
             document.body.appendChild(link);
             link.click();
+
             // Remove the link after download
             if (link.parentNode) {
                 link.parentNode.removeChild(link);
             }
+
+            toastr.success('Download successful!');
         } catch (error) {
             console.error('Error downloading file:', error);
         }
@@ -81,6 +86,7 @@ const UploadSection = () => {
             const response = await axios.get(`${baseURL}/generate-link?filename=${filename}`);
             const accessibleURL = response.data.link;
             navigator.clipboard.writeText(accessibleURL);
+            toastr.success(`Copied!`);
         } catch (error) {
             console.error('Error generating link:', error);
         }
@@ -98,7 +104,7 @@ const UploadSection = () => {
             }}
         >
             <Typography variant="h4" component="h4" gutterBottom>
-                Welcome to my document library
+                Document Management System
             </Typography>
 
             <form>
