@@ -57,15 +57,6 @@ export const getFiles = async (req: Request, res: Response) => {
     }
 };
 
-export const getFileLink = (req: Request, res: Response) => {
-    const { filename } = req.query;
-    const currentDirectory = __dirname;
-    const rootDirectory = path.resolve(currentDirectory, '..', '..');
-    const filePath = rootDirectory + '/uploads/' + filename;
-    const link = filePath;
-    res.json({ link });
-};
-
 export const downloadFile = async (req: Request, res: Response) => {
     const { filename } = req.query;
     const fileDetailsPath = 'file-details.json';

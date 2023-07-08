@@ -6,8 +6,7 @@ import {
     getFiles,
     downloadFile,
     getGeneratedLink,
-    accessGeneratedLink,
-    getFileLink
+    accessGeneratedLink
 } from '../controller/uploader';
 import { upload } from '../controller/helper';
 
@@ -16,6 +15,5 @@ router.get('/files', getFiles);
 router.get('/file', downloadFile);
 router.get('/generate-link', getGeneratedLink);
 router.get('/access-document', accessGeneratedLink);
-router.get('/file-link', getFileLink);
 
 export default router;

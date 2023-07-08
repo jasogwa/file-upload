@@ -20,6 +20,7 @@ app.use(
     })
 );
 app.use(express.static(__dirname)); //resolve base url
+app.use('/uploads', express.static('uploads'));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());

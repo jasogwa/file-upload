@@ -19,6 +19,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { ChangeEvent, useEffect, useState } from 'react';
 import FileIcon from '../components/FileIcon';
+import ImagePreview from '../components/ImagePreview';
 
 const UploadSection = () => {
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
@@ -141,13 +142,13 @@ const UploadSection = () => {
                     </Button>
                 </Stack>
             </form>
-
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>
                         <TableRow>
                             <TableCell>File Name</TableCell>
                             <TableCell>Icon</TableCell>
+                            <TableCell>Preview</TableCell>
                             <TableCell>Date/time</TableCell>
                             <TableCell>Download count</TableCell>
                             <TableCell>Download</TableCell>
@@ -160,6 +161,9 @@ const UploadSection = () => {
                                 <TableCell>{file['originalname']}</TableCell>
                                 <TableCell>
                                     <FileIcon fileName={file['filename']} />
+                                </TableCell>
+                                <TableCell>
+                                    <ImagePreview fileLink={baseURL + '/uploads/' + file['filename']} />
                                 </TableCell>
                                 <TableCell>{file['date']}</TableCell>
                                 <TableCell>{file['downloads']}</TableCell>
