@@ -1,5 +1,7 @@
 # Installation 
 
+* Recommended node version: 16.17.0
+
 ## BackEnd
 
 *   ``cd server``
