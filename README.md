@@ -9,13 +9,13 @@
 
 * Recommended node version: 16.17.0
 
-## BackEnd
+### BackEnd
 
 *   ``cd server``
 *   ``npm install``
 *   ``npm run dev``
 
-## FrontEnd
+### FrontEnd
 
 *   ``cd client``
 *   ``npm install``
