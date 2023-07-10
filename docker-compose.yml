@@ -2,15 +2,15 @@ version: '3'
 
 services:
   
-  frontend:
+  client:
     build:
       context: ./client
     ports:
-      - 5173:5173    
+      - 8000:8000    
     depends_on:
-      - backend
+      - server
 
-  backend:
+  server:
     build:
       context: ./server
     ports:
