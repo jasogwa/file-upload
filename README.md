@@ -1,5 +1,12 @@
 # Installation 
 
+## Install with docker
+
+* Install and configure docker on your machine
+* At the root folder run `docker-compose up`
+
+## Install without docker
+
 * Recommended node version: 16.17.0
 
 ## BackEnd
@@ -16,7 +23,7 @@
 
 # Run
 
-*   ``Open : http://localhost:5173/  on your browser``
+*   ``Open : http://localhost:8000/  on your browser``
 
 ## 	Description of main architecture and design decisions
 
